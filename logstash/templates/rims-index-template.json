@@ -1,0 +1,141 @@
+// PUT _template/rims-index-template
+{
+  "index_patterns": [
+    "rims-index-*"
+  ],
+  "mappings": {
+    "doc": {
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "@version": {
+          "type": "text"
+        },
+        "action": {
+          "norms": false,
+          "type": "text"
+        },
+        "application": {
+          "type": "keyword"
+        },
+        "assemblyVersion": {
+          "type": "keyword"
+        },
+        "clientIP": {
+          "type": "ip"
+        },
+        "contextData": {
+          "norms": false,
+          "type": "text"
+        },
+        "elapsed_time": {
+          "type": "float"
+        },
+        "elapsed_timestamp_start": {
+          "type": "date"
+        },
+        "environment": {
+          "type": "keyword"
+        },
+      "exceptionData": {
+          "norms": false,
+          "type": "text"
+        },
+        "exceptionMessage": {
+          "norms": false,
+          "type": "text"
+        },
+        "exceptionMessageHash": {
+          "norms": false,
+          "type": "keyword"
+        },
+        "exceptionStack": {
+          "norms": false,
+          "type": "text"
+        },
+        "exceptionStackHash": {
+          "type": "keyword"
+        },
+        "exceptionType": {
+          "type": "keyword"
+        },
+        "geoip": {
+          "type": "object"
+        },
+        "host": {
+          "type": "keyword"
+        },
+        "identity": {
+          "type": "keyword"
+        },
+        "innerExceptions": {
+          "norms": false,
+          "type": "text"
+        },
+        "lenderId": {
+          "type": "long"
+        },
+        "level": {
+          "type": "long"
+        },
+        "levelName": {
+          "type": "keyword"
+        },
+        "logType": {
+          "type": "keyword"
+        },
+        "logger": {
+          "type": "keyword"
+        },
+        "machineName": {
+          "type": "keyword"
+        },
+        "message": {
+          "norms": false,
+          "type": "text"
+        },
+        "messageHash": {
+          "type": "keyword"
+        },
+        "method": {
+          "type": "keyword"
+        },
+        "port": {
+          "type": "long"
+        },
+        "queryString": {
+          "type": "text"
+        },
+        "referrer": {
+          "type": "text"
+        },
+        "requestMethod": {
+          "type": "keyword"
+        },
+        "requestTrackingTicket": {
+          "type": "keyword"
+        },
+        "sessionId": {
+          "type": "keyword"
+        },
+        "tags": {
+          "norms": false,
+          "type": "text"
+        },
+        "url": {
+          "type": "text"
+        },
+        "userAgent": {
+          "type": "keyword"
+        },
+        "userId": {
+          "type": "long"
+        },
+        "userTypeId": {
+          "type": "long"
+        }
+      }
+    }
+  }
+}
