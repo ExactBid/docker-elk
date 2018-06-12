@@ -1,5 +1,5 @@
-// PUT _template/rims-index-template
 {
+  "_comment": "to update, PUT _template/rims-index-template",
   "index_patterns": [
     "rims-index-*"
   ],
