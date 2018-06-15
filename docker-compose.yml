@@ -11,7 +11,7 @@ services:
       - "9200:9200"
       - "9201:9201"
     environment:
-      ES_JAVA_OPTS: "-Xmx10g -Xms10g"
+      ES_JAVA_OPTS: "-Xmx16g -Xms16g"
       ELASTIC_PASSWORD: changeme
     networks:
       - elk
