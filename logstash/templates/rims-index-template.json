@@ -3,9 +3,6 @@
   "index_patterns": [
     "rims-index-*"
   ],
-  "settings": {
-    "number_of_replicas": 0
-  },
   "mappings": {
     "doc": {
       "properties": {
@@ -25,6 +22,9 @@
         "assemblyVersion": {
           "type": "keyword"
         },
+        "category": {
+          "type": "keyword"
+        },
         "clientIP": {
           "type": "ip"
         },
@@ -41,7 +41,7 @@
         "environment": {
           "type": "keyword"
         },
-      "exceptionData": {
+        "exceptionData": {
           "norms": false,
           "type": "text"
         },
@@ -140,5 +140,8 @@
         }
       }
     }
+  },
+  "settings": {
+    "number_of_replicas": 0
   }
 }
