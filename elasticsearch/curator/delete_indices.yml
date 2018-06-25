@@ -3,7 +3,7 @@
 # not a Python "NoneType"
 actions:
   1:
-    action: delete_rims_indices
+    action: delete_indices
     description: >-
       Delete old rims indices.
       Ignore the error if the filter does not result in an actionable list
@@ -22,7 +22,7 @@ actions:
       unit: days
       unit_count: 90
   2:
-    action: delete_metricbeat_indices
+    action: delete_indices
     description: >-
       Delete old metricbeat indices.
       Ignore the error if the filter does not result in an actionable list
@@ -41,7 +41,7 @@ actions:
       unit: days
       unit_count: 90
   3:
-    action: delete_default_indices
+    action: delete_indices
     description: >-
       Delete old 'default' indices. Default indexs are created when our logstash
       filters can't figure out what product the index is for and are for debugging
