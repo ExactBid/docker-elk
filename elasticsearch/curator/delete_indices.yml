@@ -3,9 +3,9 @@
 # not a Python "NoneType"
 actions:
   1:
-    action: delete_indices
+    action: delete_rims_indices
     description: >-
-      Delete old rims-index- prefixed indices.
+      Delete old rims indices.
       Ignore the error if the filter does not result in an actionable list
       of indices (ignore_empty_list) and exit cleanly.
     options:
@@ -21,3 +21,43 @@ actions:
       timestring: '%Y.%m.%d'
       unit: days
       unit_count: 90
+  2:
+    action: delete_metricbeat_indices
+    description: >-
+      Delete old metricbeat indices.
+      Ignore the error if the filter does not result in an actionable list
+      of indices (ignore_empty_list) and exit cleanly.
+    options:
+      ignore_empty_list: True
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: prefix
+      value: metricbeat-6.3.0-
+    - filtertype: age
+      source: name
+      direction: older
+      timestring: '%Y.%m.%d'
+      unit: days
+      unit_count: 90
+  3:
+    action: delete_default_indices
+    description: >-
+      Delete old 'default' indices. Default indexs are created when our logstash
+      filters can't figure out what product the index is for and are for debugging
+      only. Delete after just 1 day.
+      Ignore the error if the filter does not result in an actionable list
+      of indices (ignore_empty_list) and exit cleanly.
+    options:
+      ignore_empty_list: True
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: prefix
+      value: default-index-
+    - filtertype: age
+      source: name
+      direction: older
+      timestring: '%Y.%m.%d'
+      unit: days
+      unit_count: 1      
