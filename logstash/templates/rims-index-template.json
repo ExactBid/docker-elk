@@ -136,7 +136,7 @@
           "type": "long"
         },
         "userTypeId": {
-          "type": "long"
+          "type": "keyword"
         }
       }
     }
