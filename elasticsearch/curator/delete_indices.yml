@@ -33,7 +33,7 @@ actions:
     filters:
     - filtertype: pattern
       kind: prefix
-      value: metricbeat-6.3.0-
+      value: metricbeat-
     - filtertype: age
       source: name
       direction: older
