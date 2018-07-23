@@ -24,7 +24,7 @@ actions:
   2:
     action: delete_indices
     description: >-
-      Delete old metricbeat indices.
+      Delete old metricbeat indices. Don't need to keep a lot of historica data.
       Ignore the error if the filter does not result in an actionable list
       of indices (ignore_empty_list) and exit cleanly.
     options:
@@ -39,13 +39,13 @@ actions:
       direction: older
       timestring: '%Y.%m.%d'
       unit: days
-      unit_count: 90
+      unit_count: 7
   3:
     action: delete_indices
     description: >-
       Delete old 'default' indices. Default indexs are created when our logstash
       filters can't figure out what product the index is for and are for debugging
-      only. Delete after just 1 day.
+      only. Delete after a week - parse exceptions generally wind up here.
       Ignore the error if the filter does not result in an actionable list
       of indices (ignore_empty_list) and exit cleanly.
     options:
@@ -60,4 +60,4 @@ actions:
       direction: older
       timestring: '%Y.%m.%d'
       unit: days
-      unit_count: 1      
+      unit_count: 7      
